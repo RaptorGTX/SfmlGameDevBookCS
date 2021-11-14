@@ -15,8 +15,8 @@ namespace SfmlGameDevelopmentBook
             // Try to load resources
             try
             {
-                textures.load(TextureId.Landscape, "Media/Textures/Desert.png");
-                textures.load(TextureId.Airplane, "Media/Textures/Eagle.png");
+                textures.Load(TextureId.Landscape, "Media/Textures/Desert.png");
+                textures.Load(TextureId.Airplane, "Media/Textures/Eagle.png");
             }
             catch (Exception e)
             {
@@ -26,20 +26,13 @@ namespace SfmlGameDevelopmentBook
             }
 
             // Access resources
-            Sprite landscape = new Sprite(textures.get(TextureId.Landscape));
-            Sprite airplane = new Sprite(textures.get(TextureId.Airplane));
+            Sprite landscape = new Sprite(textures.Get(TextureId.Landscape));
+            Sprite airplane = new Sprite(textures.Get(TextureId.Airplane));
             airplane.Position = new SFML.System.Vector2f(200f, 200f);
 
             // Use lambda expressions to replace the window.pollEvent() loop
-            window.KeyPressed += (sender, args) =>
-            {
-                window.Close();
-            };
-
-            window.Closed += (sender, args) =>
-            {
-                window.Close();
-            };
+            window.KeyPressed += (sender, args) => window.Close();
+            window.Closed += (sender, args) => window.Close();
 
             while (window.IsOpen)
             {

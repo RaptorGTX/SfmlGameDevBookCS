@@ -7,8 +7,9 @@ namespace SfmlGameDevelopmentBook
 {
     public enum TextureId
     {
-        Landscape,
-        Airplane
+        Eagle,
+        Raptor,
+        Desert
     }
 
     public class TextureResourceHolder : ResourceHolder<Texture, TextureId>
